@@ -1,0 +1,86 @@
+nohup: ignoring input
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.16.8:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 118-607-366
+152.59.120.26 - - [29/Jul/2025 03:55:27] "GET /apidocs/ HTTP/1.1" 200 -
+152.59.120.26 - - [29/Jul/2025 03:55:29] "[36mGET /flasgger_static/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+152.59.120.26 - - [29/Jul/2025 03:55:29] "[36mGET /flasgger_static/swagger-ui.css HTTP/1.1[0m" 304 -
+152.59.120.26 - - [29/Jul/2025 03:55:29] "[36mGET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+152.59.120.26 - - [29/Jul/2025 03:55:30] "[36mGET /flasgger_static/lib/jquery.min.js HTTP/1.1[0m" 304 -
+152.59.120.26 - - [29/Jul/2025 03:55:31] "GET /apispec_1.json HTTP/1.1" 200 -
+152.59.120.26 - - [29/Jul/2025 03:55:31] "[36mGET /flasgger_static/favicon-32x32.png HTTP/1.1[0m" 304 -
+152.59.120.26 - - [29/Jul/2025 03:56:22] "GET /apidocs/ HTTP/1.1" 200 -
+152.59.120.26 - - [29/Jul/2025 03:56:23] "[36mGET /flasgger_static/swagger-ui.css HTTP/1.1[0m" 304 -
+152.59.120.26 - - [29/Jul/2025 03:56:24] "[36mGET /flasgger_static/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+152.59.120.26 - - [29/Jul/2025 03:56:24] "[36mGET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+152.59.120.26 - - [29/Jul/2025 03:56:24] "[36mGET /flasgger_static/lib/jquery.min.js HTTP/1.1[0m" 304 -
+152.59.120.26 - - [29/Jul/2025 03:56:24] "GET /apispec_1.json HTTP/1.1" 200 -
+64.227.180.171 - - [29/Jul/2025 05:43:01] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03voü\x9c\x82\x9aÌ¥')
+64.227.180.171 - - [29/Jul/2025 05:43:01] "[31m[1m\x16\x03\x01\x00{\x01\x00\x00w\x03\x03voü\x9c\x82\x9aÌ¥\x1d\x1c^Ë[0m" 400 -
+64.227.180.171 - - [29/Jul/2025 05:43:02] code 400, message Bad request version ('À\x14À')
+64.227.180.171 - - [29/Jul/2025 05:43:02] "[31m[1m\x16\x03\x01\x00{\x01\x00\x00w\x03\x03\x90có\x85\x80>¡þQ\x05Î°\x7f¬"ÔK\x12G"ÅÚKº\x93\x18ó¥«¡G9\x00\x00\x1aÀ/À+À\x11À\x07À\x13À\x09À\x14À[0m" 400 -
+64.227.180.171 - - [29/Jul/2025 05:43:02] "[33mGET / HTTP/1.1[0m" 404 -
+139.59.17.135 - - [29/Jul/2025 08:26:08] "[33mGET / HTTP/1.1[0m" 404 -
+139.59.17.135 - - [29/Jul/2025 08:26:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+152.59.89.91 - - [29/Jul/2025 09:44:44] "GET /apidocs/ HTTP/1.1" 200 -
+152.59.89.91 - - [29/Jul/2025 09:44:45] "[36mGET /flasgger_static/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+152.59.89.91 - - [29/Jul/2025 09:44:46] "[36mGET /flasgger_static/swagger-ui.css HTTP/1.1[0m" 304 -
+152.59.89.91 - - [29/Jul/2025 09:44:46] "[36mGET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+152.59.89.91 - - [29/Jul/2025 09:44:47] "[36mGET /flasgger_static/lib/jquery.min.js HTTP/1.1[0m" 304 -
+152.59.89.91 - - [29/Jul/2025 09:44:50] "GET /apispec_1.json HTTP/1.1" 200 -
+152.59.89.91 - - [29/Jul/2025 09:45:49] "POST /api/v1/attendance/create HTTP/1.1" 200 -
+152.59.89.91 - - [29/Jul/2025 10:03:29] "GET /apidocs/ HTTP/1.1" 200 -
+152.59.89.91 - - [29/Jul/2025 10:03:29] "[36mGET /flasgger_static/swagger-ui.css HTTP/1.1[0m" 304 -
+152.59.89.91 - - [29/Jul/2025 10:03:30] "[36mGET /flasgger_static/swagger-ui-bundle.js HTTP/1.1[0m" 304 -
+152.59.89.91 - - [29/Jul/2025 10:03:30] "[36mGET /flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 -
+152.59.89.91 - - [29/Jul/2025 10:03:30] "[36mGET /flasgger_static/lib/jquery.min.js HTTP/1.1[0m" 304 -
+152.59.89.91 - - [29/Jul/2025 10:03:30] "GET /apispec_1.json HTTP/1.1" 200 -
+44.250.252.181 - - [29/Jul/2025 11:43:02] "[33mGET / HTTP/1.1[0m" 404 -
+195.184.76.92 - - [29/Jul/2025 14:20:23] code 400, message Bad request version ('Ñlü»Â6')
+195.184.76.92 - - [29/Jul/2025 14:20:23] "[31m[1m\x16\x03\x03\x01¥\x01\x00\x01¡\x03\x03/»;û¯\x1d \x7f\x06\x8d\x91Ü2<\x1fÑlü»Â6[0m" 400 -
+195.184.76.132 - - [29/Jul/2025 14:20:26] "[33mGET / HTTP/1.1[0m" 404 -
+195.184.76.17 - - [29/Jul/2025 14:33:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+91.196.152.25 - - [29/Jul/2025 17:57:21] code 400, message Bad request version ('À#À¬À®À+À')
+91.196.152.25 - - [29/Jul/2025 17:57:21] "[31m[1m\x16\x03\x03\x01¥\x01\x00\x01¡\x03\x032îSL\x03\x97ý\x7f\x8f0á³\x938\x02\x0bd\x93y\x8cùM3ûp\x15KÛ\x87Á\x17¾ \x07MàñàÕç°&\x94×3»¡Ì¼üçÚüÒ\x12×Ý:\x7fó£\x8d¢*¨\x00\x8a\x00\x16\x003\x00gÀ\x9eÀ¢\x00\x9e\x009\x00kÀ\x9fÀ£\x00\x9f\x00E\x00¾\x00\x88\x00Ä\x00\x9aÀ\x08À\x09À#À¬À®À+À[0m" 400 -
+91.196.152.26 - - [29/Jul/2025 17:57:28] "[33mGET / HTTP/1.1[0m" 404 -
+91.231.89.207 - - [29/Jul/2025 18:07:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+3.137.73.221 - - [30/Jul/2025 02:23:30] "[33mGET / HTTP/1.1[0m" 404 -
+3.137.73.221 - - [30/Jul/2025 02:25:32] "[33mGET / HTTP/1.1[0m" 404 -
+3.137.73.221 - - [30/Jul/2025 02:27:00] code 400, message Bad HTTP/0.9 request type ("\x16\x03\x01\x00{\x01\x00\x00w\x03\x03Ë\x97\x9b\x01va3B¦þmÒ\x1bÞCf\x04B\x86'")
+3.137.73.221 - - [30/Jul/2025 02:27:00] "[31m[1m\x16\x03\x01\x00{\x01\x00\x00w\x03\x03Ë\x97\x9b\x01va3B¦þmÒ\x1bÞCf\x04B\x86'\x0cY\x10uÈ[0m" 400 -
+3.137.73.221 - - [30/Jul/2025 02:28:50] code 400, message Bad request syntax ('SSH-2.0-Go')
+3.137.73.221 - - [30/Jul/2025 02:28:50] "[31m[1mSSH-2.0-Go[0m" 400 -
+3.137.73.221 - - [30/Jul/2025 02:30:20] code 400, message Bad request syntax ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03¶Pä\x07\xad_pñ·çO\x92FØ¢+\x02\x80ÉA=>¿³ÅN*')
+3.137.73.221 - - [30/Jul/2025 02:30:20] "[31m[1m\x16\x03\x01\x00{\x01\x00\x00w\x03\x03¶Pä\x07­_pñ·çO\x92FØ¢+\x02\x80ÉA=>¿³ÅN*[0m" 400 -
+18.97.26.26 - - [30/Jul/2025 05:58:47] code 400, message Bad request version ('õd')
+18.97.26.26 - - [30/Jul/2025 05:58:47] "[31m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03Z\x1b·Â:ýqeø\x81'y\x1cÌc)K^Hºx\\\x88\x91,h©^fÓtó Å"\x16Ú\x1dõd[0m" 400 -
+18.97.26.26 - - [30/Jul/2025 05:58:48] "[33mGET / HTTP/1.1[0m" 404 -
+125.212.212.77 - - [30/Jul/2025 15:44:38] code 400, message Bad request syntax ('JRMI\x00\x02K')
+125.212.212.77 - - [30/Jul/2025 15:44:39] "[31m[1mJRMI\x00\x02K[0m" 400 -
+125.212.212.77 - - [30/Jul/2025 15:44:39] "[33mGET / HTTP/1.1[0m" 404 -
+3.134.148.59 - - [30/Jul/2025 23:57:17] "[33mGET / HTTP/1.1[0m" 404 -
+3.134.148.59 - - [30/Jul/2025 23:58:51] "[33mGET / HTTP/1.1[0m" 404 -
+3.134.148.59 - - [31/Jul/2025 00:00:20] code 400, message Bad request version ('À\x14À')
+3.134.148.59 - - [31/Jul/2025 00:00:20] "[31m[1m\x16\x03\x01\x00{\x01\x00\x00w\x03\x03ó\x0d\x13®\x08\x13¤á¸\x1f\x9bQ;\x86·Ø\x89ñTÂþ©oÖÀ³ôÐ+§x¬\x00\x00\x1aÀ/À+À\x11À\x07À\x13À\x09À\x14À[0m" 400 -
+3.134.148.59 - - [31/Jul/2025 00:01:28] code 400, message Bad request syntax ('SSH-2.0-Go')
+3.134.148.59 - - [31/Jul/2025 00:01:28] "[31m[1mSSH-2.0-Go[0m" 400 -
+3.134.148.59 - - [31/Jul/2025 00:02:56] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03\xad\x92§m;±\x88\x96\x00ºr´\x93Þ\x03Y&\x14[Ñ¹±iD\x95Lë5g\x11ox\x00\x00\x1aÀ/À+À\x11À\x07À\x13À')
+3.134.148.59 - - [31/Jul/2025 00:02:56] "[31m[1m\x16\x03\x01\x00{\x01\x00\x00w\x03\x03­\x92§m;±\x88\x96\x00ºr´\x93Þ\x03Y&\x14[Ñ¹±iD\x95Lë5g\x11ox\x00\x00\x1aÀ/À+À\x11À\x07À\x13À\x09À\x14À[0m" 400 -
+117.143.82.33 - - [31/Jul/2025 00:23:11] "[33mGET / HTTP/1.1[0m" 404 -
+118.212.121.1 - - [31/Jul/2025 00:23:27] "[33mGET / HTTP/1.1[0m" 404 -
+3.149.59.26 - - [31/Jul/2025 01:02:49] "[33mGET / HTTP/1.1[0m" 404 -
+3.149.59.26 - - [31/Jul/2025 01:04:55] "[33mGET / HTTP/1.1[0m" 404 -
+3.149.59.26 - - [31/Jul/2025 01:06:28] code 400, message Bad request version ('À\x14À')
+3.149.59.26 - - [31/Jul/2025 01:06:28] "[31m[1m\x16\x03\x01\x00{\x01\x00\x00w\x03\x03h\x01\x8b\x01\x1fâ\x1c¡±¸\x94\x0bñ\x83\x03=\x91²¦44³÷\x1e4 ÷\x87RÒ>Í\x00\x00\x1aÀ/À+À\x11À\x07À\x13À\x09À\x14À[0m" 400 -
+3.149.59.26 - - [31/Jul/2025 01:08:04] code 400, message Bad request syntax ('SSH-2.0-Go')
+3.149.59.26 - - [31/Jul/2025 01:08:04] "[31m[1mSSH-2.0-Go[0m" 400 -
+3.149.59.26 - - [31/Jul/2025 01:10:17] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00{\x01\x00\x00w\x03\x03')
+3.149.59.26 - - [31/Jul/2025 01:10:17] "[31m[1m\x16\x03\x01\x00{\x01\x00\x00w\x03\x03\x1f¼Á$+¥\x93[0m" 400 -
+147.185.132.22 - - [31/Jul/2025 06:14:10] "[33mGET / HTTP/1.0[0m" 404 -

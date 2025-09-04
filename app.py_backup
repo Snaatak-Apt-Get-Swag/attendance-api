@@ -1,0 +1,49 @@
+"""
+Main entry point for the Flask application.
+
+This application is intended to run using Flask or Gunicorn.
+It includes support for CORS, Swagger documentation, Prometheus metrics,
+Redis caching, and structured JSON serialization.
+"""
+
+from flask import Flask, json
+from flask_cors import CORS
+from flasgger import Swagger
+from prometheus_flask_exporter import PrometheusMetrics
+from router.attendance import route as create_record
+from router.cache import cache
+from utils.json_encoder import DataclassJSONEncoder
+from client.redis.redis_conn import get_caching_data
+
+app = Flask(__name__)
+
+# Enable CORS only for allowed frontend origin
+CORS(
+    app,
+    resources={r"/api/*": {"origins": "http://13.48.67.195:3000"}},
+    supports_credentials=True
+)
+
+# Enable Swagger documentation
+swagger = Swagger(app)
+
+# Prometheus metrics exporter
+metrics = PrometheusMetrics(app)
+metrics.info("attendance_api", "Attendance API OpenTelemetry metrics", version="0.1.0")
+
+# Redis cache configuration
+cache.init_app(app, get_caching_data())
+
+# Configure JSON output format
+app.config['JSON_SORT_KEYS'] = False
+if hasattr(json, "provider"):
+    json.provider.DefaultJSONProvider.sort_keys = False
+app.json_encoder = DataclassJSONEncoder
+
+# Register API routes
+app.register_blueprint(create_record, url_prefix="/api/v1")
+
+# Development server entry point (for debugging only)
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=5000)
+
