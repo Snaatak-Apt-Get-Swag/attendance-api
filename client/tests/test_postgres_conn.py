@@ -1,8 +1,36 @@
 import pytest
+from unittest.mock import patch, MagicMock
 from client.postgres import DatabaseSDKFacade
 from models.user_info import EmployeeInfo
 from models.message import CustomMessage, HealthMessage
 
+# ---------------- Mock Database & Redis ----------------
+@pytest.fixture(autouse=True)
+def mock_db_and_cache():
+    # Mock DB client methods
+    mock_db_client = MagicMock()
+    mock_db_client.read_employee_attendance.return_value = EmployeeInfo(
+        id="1", name="John Doe", status="Present", date="2023-01-01"
+    )
+    mock_db_client.read_all_employee_attendance.return_value = [
+        EmployeeInfo(id="1", name="John Doe", status="Present", date="2023-01-01"),
+        EmployeeInfo(id="2", name="Jane Smith", status="Absent", date="2023-01-02"),
+    ]
+    mock_db_client.create_employee_attendance.return_value = CustomMessage(
+        message="Successfully created the record for the employee id: 1"
+    )
+    mock_db_client.attendance_health.return_value = (
+        CustomMessage(message="Attendance API is running fine and ready to serve requests"),
+        200
+    )
+
+    # Patch the database attribute
+    with patch.object(DatabaseSDKFacade, "database", mock_db_client):
+        # Patch Redis status inside MiddlewareSDKFacade if needed
+        with patch("client.redis.MiddlewareSDKFacade.cache.redis_status", return_value="up"):
+            yield
+
+# ---------------- Tests ----------------
 def test_read_employee_attendance():
     db_client = DatabaseSDKFacade.database
     result = db_client.read_employee_attendance(employee_id="1")
@@ -34,7 +62,6 @@ def test_create_employee_attendance():
 
 def test_attendance_health():
     db_client = DatabaseSDKFacade.database
-    redis_status = "up"
     result, status_code = db_client.attendance_health()
     
     assert result.message == "Attendance API is running fine and ready to serve requests"
