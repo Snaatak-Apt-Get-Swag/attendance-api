@@ -36,17 +36,19 @@ def _mock_redis_client(*args, **kwargs):
 
 
 # ---------------- Apply Auto Fixtures ----------------
-@pytest.fixture(autouse=True, scope="session")
-def mock_db_and_cache():
-    """Automatically mock Postgres & Redis for all tests."""
-    with patch("psycopg2.connect", side_effect=_mock_psycopg2_connect), \
-         patch("redis.Redis", side_effect=_mock_redis_client), \
-         patch("redis.StrictRedis", side_effect=_mock_redis_client):
-        yield
+# Commenting out to use real Postgres & Redis
+# @pytest.fixture(autouse=True, scope="session")
+# def mock_db_and_cache():
+#     """Automatically mock Postgres & Redis for all tests."""
+#     with patch("psycopg2.connect", side_effect=_mock_psycopg2_connect), \
+#          patch("redis.Redis", side_effect=_mock_redis_client), \
+#          patch("redis.StrictRedis", side_effect=_mock_redis_client):
+#         yield
 
 
 def pytest_configure(config):
     """Hook to ensure mocks are active before imports."""
-    patch("psycopg2.connect", side_effect=_mock_psycopg2_connect).start()
-    patch("redis.Redis", side_effect=_mock_redis_client).start()
-    patch("redis.StrictRedis", side_effect=_mock_redis_client).start()
+    # Comment out patching for real API usage
+    # patch("psycopg2.connect", side_effect=_mock_psycopg2_connect).start()
+    # patch("redis.Redis", side_effect=_mock_redis_client).start()
+    # patch("redis.StrictRedis", side_effect=_mock_redis_client).start()
