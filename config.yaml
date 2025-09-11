@@ -1,10 +1,10 @@
 postgres:
-  host: 127.0.0.1
+  host: 10.0.69.171
   port: 5432
   user: app
   password: pass
   database: attendance_db
 redis:
-  host: 172.17.0.4
+  host: 10.0.64.90
   port: 6379
-  password: "pass"
+  password: ""
