@@ -4,7 +4,6 @@ import pytest
 from client.redis import MiddlewareSDKFacade
 from client.redis.redis_conn import get_caching_data
 
-# Fixture for mocking config file
 @pytest.fixture
 def mock_config_file():
     mock_file = mock.MagicMock()
@@ -24,7 +23,7 @@ def test_get_caching_data(mock_open, mock_config_file):
 
     result = get_caching_data()
 
-    # Assert structure and types, without hardcoding host
+    # Assert structure and values
     assert result["CACHE_TYPE"] == "redis"
     assert result["CACHE_REDIS_PORT"] == 6379
     assert "CACHE_REDIS_HOST" in result
@@ -33,6 +32,6 @@ def test_get_caching_data(mock_open, mock_config_file):
     del os.environ["CONFIG_FILE"]
 
 def test_redis_status():
-    # With conftest.py mocks, redis_status() will always return "up"
+    # redis_status() mocked by conftest.py
     redis_client = MiddlewareSDKFacade.cache.redis_status()
     assert redis_client == "up"
