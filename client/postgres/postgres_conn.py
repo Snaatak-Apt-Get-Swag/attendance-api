@@ -11,22 +11,18 @@ from models.message import CustomMessage, HealthMessage
 from models.user_info import EmployeeInfo
 from client.redis import MiddlewareSDKFacade
 
-# ✅ Absolute path to config.yaml
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-CONFIG_FILE = os.path.join(BASE_DIR, 'config.yaml')
+CONFIG_FILE = os.getenv('CONFIG_FILE', 'config.yaml')
 
 class CorePostgresClient:
     """Class for defining the interface for Postgres Client"""
     def __init__(self):
         with open(CONFIG_FILE, 'r', encoding="utf-8") as config_file:
-            yaml_values = yaml.safe_load(config_file)
-        self.client = psycopg2.connect(
-            database=yaml_values['postgres']['database'],
-            host=yaml_values['postgres']['host'],
-            user=yaml_values['postgres']['user'],
-            password=yaml_values['postgres']['password'],
-            port=yaml_values['postgres']['port']
-        )
+            yaml_values = yaml.load(config_file, Loader=yaml.FullLoader)
+        self.client = psycopg2.connect(database=yaml_values['postgres']['database'],
+                                       host=yaml_values['postgres']['host'],
+                                       user=yaml_values['postgres']['user'],
+                                       password=yaml_values['postgres']['password'],
+                                       port=yaml_values['postgres']['port'])
 
     def _record_to_domain_model(self, response):
         return EmployeeInfo(
@@ -98,4 +94,3 @@ class CorePostgresClient:
             return CustomMessage(
                 message="Attendance API is not healthy, please check logs",
             ), 400
-

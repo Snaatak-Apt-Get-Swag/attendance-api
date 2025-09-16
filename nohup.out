@@ -1,2 +1,13 @@
-python3: can't open file '/home/ubuntu/attendance-api/python.py': [Errno 2] No such file or directory
-python3: can't open file '/home/ubuntu/attendance-api/python.py': [Errno 2] No such file or directory
+[2025-09-14 09:38:21 +0000] [15241] [INFO] Starting gunicorn 23.0.0
+[2025-09-14 09:38:21 +0000] [15241] [INFO] Listening at: http://0.0.0.0:5001 (15241)
+[2025-09-14 09:38:21 +0000] [15241] [INFO] Using worker: sync
+[2025-09-14 09:38:21 +0000] [15242] [INFO] Booting worker with pid: 15242
+[2025-09-14 09:38:22 +0000] [15243] [INFO] Booting worker with pid: 15243
+[2025-09-14 09:38:22 +0000] [15244] [INFO] Booting worker with pid: 15244
+[2025-09-14 09:38:22 +0000] [15245] [INFO] Booting worker with pid: 15245
+[2025-09-14 09:46:34 +0000] [15241] [INFO] Handling signal: term
+[2025-09-14 09:46:34 +0000] [15242] [INFO] Worker exiting (pid: 15242)
+[2025-09-14 09:46:34 +0000] [15245] [INFO] Worker exiting (pid: 15245)
+[2025-09-14 09:46:34 +0000] [15244] [INFO] Worker exiting (pid: 15244)
+[2025-09-14 09:46:34 +0000] [15243] [INFO] Worker exiting (pid: 15243)
+[2025-09-14 09:46:35 +0000] [15241] [INFO] Shutting down: Master

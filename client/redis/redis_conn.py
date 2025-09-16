@@ -1,16 +1,18 @@
+"""
+Module for Redis data and interface
+"""
+# pylint: disable=too-few-public-methods,no-member
 import os
 import redis
 import yaml
 
-# Get absolute path to config.yaml
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-CONFIG_FILE = os.path.join(BASE_DIR, 'config.yaml')
+CONFIG_FILE = os.getenv('CONFIG_FILE', 'config.yaml')
 
 def get_caching_data():
     """Function to get cache config for redis cache"""
     with open(CONFIG_FILE, 'r', encoding="utf-8") as config_file:
-        yaml_value = yaml.safe_load(config_file)
-    config_dict = {
+        yaml_value = yaml.load(config_file, Loader=yaml.FullLoader)
+    config_dict={
         "CACHE_TYPE": "redis",
         "CACHE_REDIS_HOST": yaml_value['redis']['host'],
         "CACHE_REDIS_PORT": yaml_value['redis']['port'],
@@ -18,17 +20,16 @@ def get_caching_data():
     }
     return config_dict
 
+
 class CoreRedisClient:
     """Class for defining the structure of Redis database"""
     def __init__(self):
         with open(CONFIG_FILE, 'r', encoding="utf-8") as config_file:
-            yaml_values = yaml.safe_load(config_file)
-        self.client = redis.Redis(
-            host=yaml_values['redis']['host'],
-            port=yaml_values['redis']['port'],
-            password=yaml_values['redis']['password'],
-            decode_responses=True
-        )
+            yaml_values = yaml.load(config_file, Loader=yaml.FullLoader)
+        self.client = redis.Redis(host=yaml_values['redis']['host'],
+                                   port=yaml_values['redis']['port'],
+                                   password=yaml_values['redis']['password'],
+                                   decode_responses=True)
 
     def redis_status(self):
         """Function for getting the health of redis"""
@@ -37,4 +38,3 @@ class CoreRedisClient:
             return "up"
         except redis.ConnectionError:
             return "down"
-

@@ -20,7 +20,7 @@ route = Blueprint("attendance", __name__)
 @data_validator(
     Schema(
         {
-            Required("id"): str,
+            Required("id"): int,
             Required("name"): str,
             Required("status"): str,
             Required("date"):str,
@@ -153,7 +153,7 @@ def read_all_record():
     record = DatabaseSDKFacade.database.read_all_employee_attendance()
     return jsonify(record)
 
-@route.route("/health/detail", methods=["GET"])
+@route.route("/attendance/health/detail", methods=["GET"])
 def get_detail_healthcheck():
     """
     Function for getting detailed healthcheck of application
